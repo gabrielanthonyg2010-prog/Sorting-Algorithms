@@ -12,11 +12,12 @@ var width : float
 var heightDif : float
 enum sortType {
 	bogosort,
-	select,
+	bubble,
 	insert,
-	bubble
+	select,
+	stalin,
 }
-var sort = sortType.bubble
+var sort = sortType.stalin
 
 func add_bars(numberOfBars):
 	width = ((borderR - marginStart * 2) - barSeparation * (numberOfBars - 1)) / numberOfBars
@@ -132,6 +133,25 @@ func bubble_sort():
 		move_bars(z)
 		bars[z].modulate = "GREEN"
 
+func stalin_sort():
+	var index = 0
+	while true:
+		bars[index].modulate = "RED"
+		if barHeights[bars[index]] > barHeights[bars[index+1]]:
+			bars[index+1].position = Vector2(1000000,1000000000000)
+			bars.erase(bars[index+1])
+		else:
+			index += 1
+		for z in range(len(bars)):
+			move_bars(z)
+		for x in range(6):
+			await get_tree().process_frame
+		if index == len(bars)-1:
+			break
+	for z in range(len(bars)):
+		move_bars(z)
+		bars[z].modulate = "GREEN"
+
 func _ready():
 	add_bars(50)
 	for x in range(60):
@@ -158,6 +178,8 @@ func _ready():
 				insertion_sort()
 			sortType.bubble:
 				bubble_sort()
+			sortType.stalin:
+				stalin_sort()
 
 func move_bars(barIndex):
 	bars[barIndex].position = Vector2(marginStart+(barSeparation+width)*barIndex,borderD-4)

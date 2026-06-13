@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bp8ml22vyv65s"]
+
+[ext_resource type="Script" uid="uid://br28xbgptv8c" path="res://Scripts/Sorter.gd" id="1_5g7os"]
+[ext_resource type="PackedScene" uid="uid://dvpkfexlr450y" path="res://Scenes/UI.tscn" id="2_6b8r6"]
+
+[node name="Sorter" type="Node2D" unique_id=612711460]
+script = ExtResource("1_5g7os")
+metadata/_edit_vertical_guides_ = [1980.0]
+metadata/_edit_horizontal_guides_ = [1080.0]
+
+[node name="Control" parent="." unique_id=2077126264 instance=ExtResource("2_6b8r6")]
+z_index = 10
+anchors_preset = 0
+anchor_right = 0.0
+grow_horizontal = 1

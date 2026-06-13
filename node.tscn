@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://bp8ml22vyv65s"]
-
-[ext_resource type="Script" uid="uid://br28xbgptv8c" path="res://Sorter.gd" id="1_sy5k4"]
-
-[node name="Sorter" type="Node2D" unique_id=612711460]
-script = ExtResource("1_sy5k4")
-metadata/_edit_vertical_guides_ = [1980.0]
-metadata/_edit_horizontal_guides_ = [1080.0]
